@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+  <head>
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+    Dragonfruit Template
+    http://www.templatemo.com/preview/templatemo_411_dragonfruit
+    -->
+    <title>Health Guru Rehabilation</title>
+    <meta name="description" content="" />
+    <!-- templatemo 411 dragonfruit -->
+    <meta name="author" content="templatemo">
+    <!-- Favicon-->
+
+    <!-- Font Awesome -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Camera -->
+    <link href="{% static 'css/camera.css' %}" rel="stylesheet">
+    <!-- Template  -->
+    <link href="{% static 'css/templatemo_style.css' %}" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+
+
+<div id="templatemo_mobile_menu">
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="{% url 'index' %}"><i class="glyphicon glyphicon-home"></i> &nbsp; Home</a></li>
+            <li><a href="{% url 'index' %}"><i class="glyphicon glyphicon-briefcase"></i> &nbsp; About</a></li>
+            <li><a href="{% url 'index' %}"><i class="glyphicon glyphicon-bullhorn"></i> &nbsp; Services</a></li>
+            <li><a href="{% url 'index' %}"><i class="glyphicon glyphicon-calendar"></i> &nbsp; Benefits</a></li>
+            <li><a href="{% url 'apply' %}"><i class="glyphicon glyphicon-export"></i> &nbsp; Apply</a></li>
+            <li><a href="{% url 'index' %}"><i class="glyphicon glyphicon-phone-alt"></i> &nbsp; Appointment</a></li>
+        </ul>
+</div>
+<div class="container_wapper">
+    <div id="templatemo_banner_menu">
+        <div class="container-fluid">
+            <div class="col-xs-4 templatemo_logo">
+            	<a href="#">
+{#                	<img src="{% static 'images/templatemo_logo.jpg' %}" id="logo_img" alt="dragonfruit website template" title="Dragonfruit Template" />#}
+                	<a id="logo_text">Health Guru<br><span class="logo_text">&nbsp; &nbsp; &nbsp; Rehabilation</span></a>
+                </a>
+            </div>
+            <div class="col-sm-8 hidden-xs">
+                <ul class="nav nav-justified">
+                    <li><a href="http://therapymantra.com/">Home</a></li>
+                    <li><a href="{% url 'index' %}">About</a></li>
+                    <li><a href="{% url 'index' %}">Services</a></li>
+                    <li><a href="{% url 'index' %}">Benefits</a></li>
+
+                    <li><a href="{% url 'index' %}">Appointment</a></li>
+                    <li><a  href="{% url 'apply' %}" >Apply</a></li>
+                 </ul>
+            </div>
+            <div class="col-xs-8 visible-xs">
+                <a href="#" id="mobile_menu"><span class="glyphicon glyphicon-th-list"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="templatemo_contact" class="container_wapper"  style="background-color: #6698b5; ">
+    <div class="container-fluid mt-20">
+        <h1>Apply us</h1>
+{#        <div class="col-xs-12">#}
+{#            <div id="templatemo_contact_map"></div>#}
+{#        </div>#}
+
+        <form action="#" method="post" class="col-md-12" style="padding: 120px; padding-top: 0px">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <p>Name</p>
+                    <input class="form-control" type="text" name="name" id="name" placeholder="Your Name" />
+                </div>
+                <div class="col-md-6">
+                    <p>Email</p>
+                    <input class="form-control" type="text" name="email" id="email" placeholder="Your Email" />
+                </div>
+                 <div class="col-md-6">
+                    <p>Contact Number</p>
+                    <input class="form-control" type="number" name="number" id="number" placeholder="Your Contact Number" />
+                </div>
+                <div class="col-md-6">
+                    <p>Upload Resume</p>
+                   <input class="form-control" type="file" name="resume" required />
+                </div>
+
+
+                <div class="col-xs-6 col-sm-3 col-md-offset-6">
+                    <button type="submit">Send</button>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <button type="reset">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="templatemo_footer">
+    <div>
+        <p id="footer">Copyright &copy; 2084 Company Name</p>
+    </div>
+</div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.singlePageNav.min.js' %}"></script>
+<script src="{% static 'js/unslider.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+<script src="{% static 'js/templatemo_script.js' %}"></script>
+</body>
+</html>
