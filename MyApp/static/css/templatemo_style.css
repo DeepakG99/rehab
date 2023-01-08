@@ -103,7 +103,7 @@ h1 {
 .banner { 
     width: 100%;
     height: 500px;
-    margin-top: 94px;
+
     position: relative; 
     overflow: hidden;
 }
@@ -141,7 +141,6 @@ h1 {
     font-size: 16px;
 }
 .templatemo_banner_slide_01 {
-    background: url('../images/rehab1.jpg');
     background-position: center;
     background-size: cover;
     backdrop-filter: blur(105px);
@@ -150,12 +149,10 @@ h1 {
 
 }
 .templatemo_banner_slide_02 {
-    background: url('../images/carousel-2.jpg');
     background-size: cover;
 
 }
 .templatemo_banner_slide_03 {
-    background: url('../images/carousel-1.jpg');
     background-size: cover;
 
 }

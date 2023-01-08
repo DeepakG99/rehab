@@ -22,13 +22,6 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',Index, name="index"),
-    path('aboutus',AboutUs, name="Aboutus"),
-    path('contactus',ContactUs, name="Contactus"),
-    path('ourservices',Services, name="services"),
-    path('services',Services, name="services"),
-    path('benefits',Benefit, name="benefits"),
-    path('ourteam',OurTeam, name="team"),
-    path('testimonial',Testimonial, name="testimonial"),
-    path('appointment',Appointment, name="appointment"),
+    path('appointment',Appointment_req, name="appointment"),
     path('apply',ApplyUS, name="apply"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

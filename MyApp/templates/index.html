@@ -31,6 +31,19 @@
     <![endif]-->
   </head>
 <style>
+
+    @media (min-width:320px) {
+        .templatemo_logo{
+            display: flex;
+
+        }
+        #templatemo_banner_menu #logo_text{
+            margin-top: 10px !important;
+        }
+    }
+
+
+
     #myVideo {
 
   right: 0;
@@ -55,33 +68,33 @@
 
     }
 
+    .marq{
+        background-color:#6698b5 ;
+        width: 100%;
+        height: 150px;
+    }
+
 
 
 </style>
 <body>
+<div class="marq">
+    <marquee style="margin-top: 110px; font-weight: bold; color: white; font-size: 20px" >"We believe in growing together in this field and work with mutual respect and professionalism to serve the community and make the difference in the lives of individuals and families"</marquee>
+</div>
 <div class="banner" id="templatemo_banner_slide">
     <ul>
-        <li class="templatemo_banner_slide_01">
+        {% for i in banner %}
+        <li class="templatemo_banner_slide_{{ i.slide_number }}" style="background: url('/media/{{ i.banner_image }}')">
 
              <div class="slide_caption">
-                <h1 style="color: black" >HEALTH GURU</h1>
-                <p style="color: black" > We believe in growing together in this field and work with mutual respect and professionalism to serve the community and make the difference in the lives of individuals and families.</p>
+{#                <h1 style="color: black" >{{ i.title }}</h1>#}
+{#                <p style="color: black" >{{ i.subtitle }}</p>#}
             </div>
         </li>
-        <li class="templatemo_banner_slide_02">
-             <div class="slide_caption">
-                <h1 style="color: black">HEALTH GURU</h1>
-                <p style="color: black"> We believe in growing together in this field and work with mutual respect and professionalism to serve the community and make the difference in the lives of individuals and families.</p>
-            </div>
-        </li>
-        <li class="templatemo_banner_slide_03">
-             <div style="color: #6698b5" class="slide_caption">
-                <h1 style="color: black">HEALTH GURU</h1>
-                <p style="color: black"> We believe in growing together in this field and work with mutual respect and professionalism to serve the community and make the difference in the lives of individuals and families.</p>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 </div>
+
 
 <div id="templatemo_mobile_menu">
         <ul class="nav nav-pills nav-stacked">
@@ -98,8 +111,8 @@
         <div class="container-fluid">
             <div class="col-xs-4 templatemo_logo">
             	<a href="#">
-{#                	<img src="{% static 'images/templatemo_logo.jpg' %}" id="logo_img" alt="dragonfruit website template" title="Dragonfruit Template" />#}
-                	<a id="logo_text" style="font-weight: bold">Health Guru<br><span class="logo_text" style="color: #6698b5">&nbsp; &nbsp; &nbsp; Rehabilation</span></a>
+                	<img src="{% static 'images/23-removebg-preview.png' %}"   id="logo_img" alt="dragonfruit website template" title="Dragonfruit Template" />
+                	<a id="logo_text" style="font-weight: bold;padding-left: 22px !important;">HealthGuru<br><span class="logo_text" style="color: #6698b5; "> Rehabilation</span></a>
                 </a>
             </div>
             <div class="col-sm-8 hidden-xs">
@@ -119,6 +132,12 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
 <div id="templatemo_about" class="container_wapper">
     <div class="container-fluid">
         <h1>About Our Organization</h1>
@@ -127,72 +146,55 @@
        </div>
         <div class="col-sm-6 col-md-3 about_icon" style="padding-top: 10px">
             <div class="imgwap mission"><i class="fa fa-rocket"></i></div>
-            <h2>Revenues</h2>
-            <p>Sed do eiusmod tempor incididunt ut labore et.</p>
+            <h2>Goal</h2>
+            <p>Our goal is to provide total patient-quality care to maximize the patient level of
+function. We strive to provide the highest rehabilitation therapy services in any setting.
+</p>
         </div>
         <div class="col-sm-6 col-md-3 about_icon">
             <div class="imgwap product"><i class="fa fa-cubes"></i></div>
-            <h2>Opportunities</h2>
-            <p>Tempor incididunt ut labore et dolore magna.</p>
+            <h2>Competency</h2>
+            <p>We strive to provide clinical-based services & a dedicated clinical
+programme based on client-centered quality care.
+</p>
         </div>
         <div class="col-sm-6 col-md-3 about_icon">
             <div class="imgwap testimonial"><i class="fa fa-bar-chart-o"></i></div>
             <h2>Growth</h2>
-            <p>Dolore magna aliqua. Ut enim ad minim veniam.</p>
+            <p>As healthcare providers, we prioritize outcomes and maximize the patient
+quality of life. We want to develop friendly employee and employer relationships, along
+with making a positive impact in Community Services.
+</p>
         </div>
         <div class="col-sm-6 col-md-3 about_icon">
             <div class="imgwap statistic"><i class="fa fa-comments"></i></div>
-            <h2>Social Media</h2>
-            <p>Aliqua. Ut enim ad minim veniam, quis nostrud aliqua.</p>
+            <h2>Compliance</h2>
+            <p>HealthGuru Rehabilitation is committed to serving the community &
+clients with respect, dignity, and integrity. We take an appropriate and comprehensive
+approach to comply with Federal & State Regulations.</p>
         </div>
         <div class="clearfix testimonial_top_bottom_spacer"></div>
         <div class="col-xs-1 pre_next_wap" id="prev_testimonial">
             <a href="#"><span class="glyphicon glyphicon-chevron-left pre_next"></span></a>
         </div>
         <div id="testimonial_text_wap" class="col-xs-9 col-sm-10">
+            {% for j in member %}
               <div class="testimonial_text">
                 <div class="col-sm-3">
-                    <img src="{% static 'images/templatemo_member_01.jpg' %}" class="img-responsive" alt="Business Development Manager" />
+                    <img style="float: left;
+                    border-radius: 20px;
+    width:  100%;
+    height: 280px;
+    object-fit: cover;" src="/media/{{ j.image }}" class="img-responsive" alt="Business Development Manager" />
                 </div>
                 <div class="col-sm-9">
-                    <h2>Shalini</h2>
-                    <h3>Physical Therapist</h3>
-                    <p> We believe in growing together in this field and work with mutual respect and professionalism to serve the community and make the difference in the lives of individuals and families.</p>
+                    <h2>{{ j.name }}</h2>
+                    <h3>{{ j.designation }}</h3>
+                    <p>{{ j.description }}</p>
                 </div>
             </div><!--.testimonial_text-->
-            <div class="testimonial_text">
-                <div class="col-sm-3">
-                    <img src="{% static 'images/templatemo_member_02.jpg' %}" class="img-responsive" alt="Chief Public Relation Officer" />
-                </div>
-                <div class="col-sm-9">
-                    <h2>Mahima</h2>
-                    <h3>Occupational therapists</h3>
-                    <p> We believe in growing together in this field and work with mutual respect and professionalism to serve the community and make the difference in the lives of individuals and families.</p>
-
-                </div>
-            </div><!--.testimonial_text-->
-            <div class="testimonial_text">
-                <div class="col-sm-3">
-                    <img src="{% static 'images/templatemo_member_03.jpg' %}" class="img-responsive" alt="Marketing Executive" />
-                </div>
-                 <div class="col-sm-9">
-                    <h2>Srishti</h2>
-                    <h3>Speech Language Pathologists</h3>
-                    <p> We believe in growing together in this field and work with mutual respect and professionalism to serve the community and make the difference in the lives of individuals and families.</p>
-
-                </div>
-            </div><!--.testimonial_text-->
-            <div class="testimonial_text">
-                <div class="col-sm-3">
-                    <img src="{% static 'images/templatemo_member_04.jpg' %}" class="img-responsive" alt="Chief Executive Officer" />
-                </div>
-                 <div class="col-sm-9">
-                    <h2>Anni</h2>
-                    <h3>Speech Language Pathologists</h3>
-                    <p> We believe in growing together in this field and work with mutual respect and professionalism to serve the community and make the difference in the lives of individuals and families.</p>
-
-                </div>
-            </div><!--.testimonial_text-->        </div><!--#testimonial_text_wap-->
+            {% endfor %}
+                  </div><!--#testimonial_text_wap-->
         <div class="col-xs-1 pre_next_wap" id="next_testimonial">
             <a href="#"><span class="glyphicon glyphicon-chevron-right pre_next"></span></a>
         </div>
@@ -202,76 +204,67 @@
 <div id="templatemo_events" class="container_wapper">
     <div class="container-fluid">
         <h1>Our Services</h1>
+        {%  for k in service %}
+            {% if forloop.counter == 3 %}
+                <div class="clearfix"></div>
+            {% endif %}
         <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-            <div class="event_box_wap event_animate_left">
+        {% if forloop.counter == 1 or forloop.counter == 3 %}
+                <div class="event_box_wap event_animate_left">
                 <div class="event_box_img">
-                    <img src="{% static 'images/templatemo_event_01.jpg' %}" class="img-responsive" alt="Web Design Trends" />
+                    <img style="
+                    border-radius: 20px;
+    width:  100%;
+
+    object-fit: cover;" src="/media/{{ k.banner_image }}" class="img-responsive" alt="Web Design Trends" />
                 </div>
                 <div class="event_box_caption">
-                    <h1>Speech Language Pathologists</h1>
-                    <p><span class="glyphicon glyphicon-map-marker"></span> 15869 Deer Tail Drive, Chino Hills,   CA 91709&nbsp;&nbsp; <span class="glyphicon glyphicon-time"></span> 4:00 PM to 8:00 PM</p>
-               <p>Speech Language Pathologists are health care professionals who evaluate, diagnose, and treat individuals with speech, language, voice and swallowing disorders. Speech language pathologists conduct evaluations for individuals of all ages related to communication and swallowing disorders. Speech-language pathologists work in Schools, Skilled nursing facilities, Hospitals, Sub Acute , Post-Acute facilities, private clinics and Home health settings.</p>
+                    <h1>{{ k.title }}</h1>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> <span class="glyphicon glyphicon-time"></span> </p>
+                <p>{{ k.description }}</p>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-            <div class="event_box_wap event_animate_right">
+            {% else %}
+        <div class="event_box_wap event_animate_right">
                 <div class="event_box_img">
-                    <img src="{% static 'images/templatemo_event_02.jpg' %}" class="img-responsive" alt="Free Bootstrap Seminar" />
+                    <img style="
+                    border-radius: 20px;
+    width:  100%;
+
+    object-fit: cover;" src="/media/{{ k.banner_image }}" class="img-responsive" alt="Free Bootstrap Seminar" />
                 </div>
                 <div class="event_box_caption">
-                    <h1>Occupational Therapy</h1>
-                    <p><span class="glyphicon glyphicon-map-marker"></span>15869 Deer Tail Drive, Chino Hills,   CA 91709&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-time"></span> 10:30 AM to 3:30 PM </p>
-               <p> Occupational therapists address the physical, cognitive, psychosocial, sensory-perceptual, and other aspects of performance in a variety of contexts and environments to support engagement in occupations that affect physical and mental health, well-being, and quality of life.</p>
+                    <h1>{{ k.title }}</h1>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> <span class="glyphicon glyphicon-time"></span></p>
+                    <p>{{ k.description }}</p>
                 </div>
             </div>
+        {% endif %}
+
         </div>
-        <div class="clearfix"></div>
-        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-            <div class="event_box_wap event_animate_left">
-                <div class="event_box_img">
-                    <img src="{% static 'images/templatemo_event_03.jpg' %}" class="img-responsive" alt="" />
-                </div>
-                <div class="event_box_caption">
-                    <h1>Physical therapy</h1>
-                    <p><span class="glyphicon glyphicon-map-marker"></span> 15869 Deer Tail Drive, Chino Hills,   CA 91709&nbsp;&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-time"></span> 3:30 PM to 6:30 PM </p>
-                <p> Physical therapist are health care professionals who maintain, restore and improve movement, activity and health. Enabling individuals of all ages to have optimal functioning and quality of life, while ensuring patient safety and applying evidence to provide efficient and effective care.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0">
-            <div class="event_box_wap event_animate_right">
-                <div class="event_box_img">
-                    <img src="{% static 'images/templatemo_event_04.jpg' %}" class="img-responsive" alt="" />
-                </div>
-                <div class="event_box_caption">
-                    <h1>Others</h1>
-                    <p><span class="glyphicon glyphicon-map-marker"></span> 15869 Deer Tail Drive, Chino Hills,   CA 91709&nbsp;&nbsp;&nbsp; <span class="glyphicon glyphicon-time"></span> 2:15 PM to 5:15 PM </p>
-               <p>Physical therapist are health care professionals who maintain, restore and improve movement, activity and health. Enabling individuals of all ages to have optimal functioning and quality of life, while ensuring patient safety and applying evidence to provide efficient and effective care.</p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+
     </div>
 </div>
 <div class="container">
     <h1>Benefits</h1>
     <div class="container" style="padding-bottom: 50px">
     <div class="row">
-        <div class="col-lg-4" style="padding: 10px">
+        <div data-toggle="modal" data-target="#benefit1" class="col-lg-4" style="padding: 10px">
             <div class="container-fluid benefit" style=" background-image: url('{% static 'images/bonus.jpg' %}');">
-                <h2 style="font-weight: bold; text-align: center; color: white">
-                    BONUS
+                <h2  style="font-weight: bold; text-align: center; color: white">
+               BONUS
                 </h2>
             </div>
         </div>
-         <div class="col-lg-4" style="padding: 10px">
+         <div data-toggle="modal" data-target="#benefit2" class="col-lg-4" style="padding: 10px">
             <div class="container-fluid benefit"  style="background-image: url('{% static 'images/support.jpeg' %}');">
                 <h2 style="font-weight: bold; text-align: center; color: white">
-                    Support With CEO
+                    Professional Support
                 </h2>
             </div>
         </div>
-         <div class="col-lg-4" style="padding: 10px">
+         <div data-toggle="modal" data-target="#benefit3" class="col-lg-4" style="padding: 10px">
             <div class="container-fluid benefit" style="background-image: url('{% static 'images/growth.jpeg' %}');">
                 <h2 style="font-weight: bold; text-align: center; color: white">
                     Company Growth
@@ -313,7 +306,7 @@
                 </li>
            </ul>
         </div>
-        <form action="#" method="post" class="col-md-8">
+        <form action="{% url 'appointment' %}" method="post" class="col-md-8" enctype="multipart/form-data">{% csrf_token %}
             <div class="row">
                 <div class="col-md-12">
                 <h2>Book Appointment</h2>
@@ -377,7 +370,7 @@
 {#            <div id="templatemo_contact_map"></div>#}
 {#        </div>#}
 
-        <form action="#" method="post" class="col-md-12">
+        <form action="{% url 'apply' %}" method="post" class="col-md-12" enctype="multipart/form-data">{% csrf_token %}
             <div class="row">
 
                 <div class="col-md-6">
@@ -394,7 +387,7 @@
                 </div>
                 <div class="col-md-6">
                     <p>Upload Resume</p>
-                   <input class="form-control" type="file" name="resume" required />
+                   <input class="form-control" type="file" name="resume_file" required />
                 </div>
 
 
@@ -415,6 +408,83 @@
 </div>
 
 
+{# popup for  benefit 1 #}
+<div class="modal fade" id="benefit1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+<div id="templatemo_contact" class="container_wapper"  style="background-color: #6698b5; border-radius: 25px ">
+        <h1>Bonus</h1>
+       <p style="padding: 20px; margin-top: -80px; font-size: 18px">
+           ➔ Sign on bonus<br>
+            ➔ Referred bonus
+
+</p>
+
+    </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="benefit2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+<div id="templatemo_contact" class="container_wapper"  style="background-color: #6698b5; border-radius: 25px ">
+        <h1>Professional Growth</h1>
+       <p style="padding: 20px; margin-top: -80px; font-size: 18px">
+           ➔ Job security<br>
+            ➔ Supervision<br>
+            ➔ CEO & License Reimbursement<br>
+            ➔ Clinical documentation<br>
+            ➔ Therapeutic Materials<br>
+            ➔ Voluntary Life Insurance
+
+
+</p>
+
+    </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="benefit3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+
+<div id="templatemo_contact" class="container_wapper"  style="background-color: #6698b5; border-radius: 25px ">
+        <h1>Bonus</h1>
+       <p style="padding: 20px; margin-top: -80px; font-size: 18px">
+           ➔ Clinical Mentorship<br>
+➔ Paid Relocation<br>
+➔ Voluntary Advantages<br>
+➔ 24/7 Employee Assistance Program<br>
+➔ Friendly employee-employer relationship<br>
+➔ Working Relocation Assistance<br>
+➔ Professional liability benefits<br>
+➔ Flexible work setting & location<br>
+➔ Direct deposit<br>
+➔ Paid Holiday
+</p>
+
+    </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
 
@@ -423,7 +493,7 @@
 
 <div id="templatemo_footer">
     <div>
-        <p id="footer">Copyright &copy; 2084 Company Name</p>
+        <p id="footer">Copyright &copy; 2023 Health Guru Rehab</p>
     </div>
 </div>
 <script src="{% static 'js/jquery.min.js' %}"></script>

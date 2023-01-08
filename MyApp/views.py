@@ -1,81 +1,49 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import *
 
 #Index Page
 def Index(request):
+    banner = BannerImage.objects.all()
+    member = TeamMember.objects.all()
+    service = Service.objects.all()
     context = {
-
+        "banner":banner,
+        "member":member,
+        "service":service
     }
     return render(request,"index.html",context)
 
 
+def Appointment_req(request):
+    if request.method == "POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        number = request.POST["number"]
+        atime = request.POST["time"]
+        medium = request.POST["medium"]
+        message = request.POST["message"]
 
-# ABout us page
-def AboutUs(request):
-    context = {
-
-    }
-    return render(request,"about.html", context)
-
-
-#Services Page
-def Services(request):
-    context = {
-
-    }
-    return render(request, "service.html", context)
-
-
-# contactUs page
-def ContactUs(request):
-    context = {
-
-    }
-    return render(request, "contact.html", context)
-
-
-#team page
-def OurTeam(request):
-    context = {
-
-    }
-    return render(request, "team.html", context)
-
-
-#Testemonial Page
-def Testimonial(request):
-    context = {
-
-    }
-    return render(request, "testimonial.html", context)
-
-#Appointment Page
-def Appointment(request):
-    context = {
-
-    }
-    return render(request, "index.html", context)
+        appoint = Appointment(name=name, email=email, mobile=number,atime=atime,medium=medium,reason=message)
+        appoint.save()
+        return redirect('index')
+    return render(request, "index.html")
 
 #Apply Page
 def ApplyUS(request):
-    context = {
+    if request.method == "POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        number = request.POST["number"]
+        resume = request.FILES["resume_file"]
 
-    }
-    return render(request, "apply.html", context)
+        apply = ResumeUpload(name=name,mobile=number,email=email,Resume=resume)
+        apply.save()
+        return redirect('index')
+    return render(request, "index.html")
 
-#error Page
-def ErrorPage(request):
-    context = {
 
-    }
-    return render(request, "404.html", context)
 
-#benefit pages
 
-def Benefit(request):
-    context = {
-
-    }
-    return render(request, "feature.html", context)
 
 
 
